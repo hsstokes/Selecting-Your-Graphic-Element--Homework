@@ -3,899 +3,512 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Graphic Elements - Homework</title>
+<title>Homework: Selecting Your Graphic Element</title>
 <style>
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=IBM+Plex+Mono:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap');
+
 :root {
-  --primary: #ea37a3;
-  --primary-light: #fdf1f5;
-  --secondary: #0a8080;
-  --secondary-light: #f5ffff;
-  --dark: #222;
-  --light: #fff;
-  --grid-light: #e0e0e0;
-  --homework: #ea37a3;
-  --homework-light: #fdf1f5;
-  /* New warm neutral tones for preview box */
-  --warm-bg: #f9f6f1;
-  --warm-border: #c9a227;
-  --warm-accent: #8b7355;
-  --warm-light: #faf8f5;
+  --ink: #1a1a1a;
+  --paper: #f2ede8;
+  --grid: #ddd8d2;
+  --teal: #0a7a7a;   --teal-light: #e3f2f1;
+  --pink: #ea37a3;   --pink-light: #fde9f4;
+  --purple: #6c35c9; --purple-light: #efe8fb;
+  --blue: #2563a8;   --blue-light: #e6eef8;
+  --gold: #c87900;   --gold-light: #fbf0dc;
+  --warm-mid: #d4cfc8;
+  --concrete: #8a8a8a;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
-  font-family: "Typewriter Condensed", "Courier New", monospace;
+  font-family: 'IBM Plex Mono', monospace;
+  color: var(--ink);
+  background-color: var(--paper);
   background-image:
-    linear-gradient(var(--grid-light) 1px, transparent 1px),
-    linear-gradient(90deg, var(--grid-light) 1px, transparent 1px);
-  background-size: 20px 20px, 20px 20px;
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 40px 40px;
   background-attachment: fixed;
-  color: var(--dark);
-  padding: 20px;
-  line-height: 1.6;
+  line-height: 1.7;
   font-size: 16px;
+  padding: 32px 20px 80px;
 }
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  background: rgba(255, 255, 255, 0.97);
-  border: 3px solid var(--homework);
-  border-radius: 12px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
-  padding: 2rem;
-}
+.wrap { max-width: 960px; margin: 0 auto; }
 
-@media (max-width: 768px) {
-  .container {
-    padding: 1rem;
-  }
+/* ---------- Header ---------- */
+header {
+  display: flex; justify-content: space-between; align-items: flex-end;
+  gap: 20px; flex-wrap: wrap;
+  border-bottom: 3px solid var(--ink);
+  padding-bottom: 20px; margin-bottom: 24px;
 }
-
-h1, h2, h3 {
-  font-family: "Typewriter Condensed", "Courier New", monospace;
-  letter-spacing: 0.5px;
-  margin-bottom: 0.8em;
+.eyebrow {
+  font-family: 'Space Mono', monospace; font-size: 0.78rem;
+  letter-spacing: 2px; text-transform: uppercase; color: var(--pink);
+  margin-bottom: 8px;
 }
-
 h1 {
-  color: var(--homework);
-  font-size: 2.3rem;
-  border-bottom: 2px solid var(--homework);
-  padding-bottom: 15px;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  font-weight: bold;
+  font-family: 'DM Serif Display', serif; font-weight: 400;
+  font-size: clamp(2.2rem, 6vw, 3.6rem); line-height: 1.05;
+}
+h1 em { color: var(--teal); font-style: italic; }
+.meta {
+  font-family: 'Space Mono', monospace; font-size: 0.85rem;
+  text-align: right; color: var(--concrete);
+}
+.meta strong { color: var(--ink); display: block; font-size: 1rem; }
+
+/* ---------- Diagonal rule ---------- */
+.rule {
+  height: 10px; margin: 34px 0;
+  background: linear-gradient(90deg, var(--pink), var(--teal));
+  transform: skewX(-15deg);
 }
 
 h2 {
-  color: var(--homework);
-  font-size: 1.6rem;
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  font-weight: bold;
+  font-family: 'DM Serif Display', serif; font-weight: 400;
+  font-size: 1.9rem; margin: 26px 0 14px;
+  display: flex; align-items: center; gap: 14px;
 }
-
 h2::before {
-  content: "";
-  display: inline-block;
-  width: 8px;
-  height: 25px;
-  background: var(--homework);
-  margin-right: 15px;
-}
-
-h3 {
-  font-size: 1.4rem;
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-  color: var(--homework);
-}
-
-p {
-  line-height: 1.8;
-  margin-bottom: 1.2em;
-  font-size: 1.1rem;
-}
-
-.banner {
-  background-color: var(--homework-light);
-  border: 2px solid var(--homework);
-  border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 30px;
-  text-align: center;
-}
-
-.banner h2 {
-  color: var(--homework);
-  margin-top: 0;
-  display: block;
-  text-align: center;
-  font-size: 1.8rem;
-}
-
-.banner h2::before {
-  display: none;
-}
-
-.banner p {
-  margin-bottom: 0;
-}
-
-/* Preview box - warm neutral tones */
-.preview-box {
-  background: linear-gradient(135deg, var(--warm-bg) 0%, var(--warm-light) 100%);
-  border: 2px solid var(--warm-border);
-  border-radius: 10px;
-  padding: 25px;
-  margin: 30px 0;
-  box-shadow: 0 5px 15px rgba(139, 115, 85, 0.15);
-}
-
-.preview-box h3 {
-  color: var(--warm-accent);
-  margin-top: 0;
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  text-align: center;
-}
-
-.preview-box > p {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-/* Image gallery grid */
-.preview-gallery {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin-top: 20px;
-}
-
-@media (max-width: 600px) {
-  .preview-gallery {
-    grid-template-columns: 1fr;
-  }
-}
-
-.preview-image {
-  text-align: center;
-  background: white;
-  border-radius: 8px;
-  padding: 15px;
-  box-shadow: 0 3px 10px rgba(139, 115, 85, 0.15);
-  border: 1px solid rgba(201, 162, 39, 0.3);
-}
-
-.preview-image img {
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 6px;
-  border: 2px solid var(--warm-border);
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.preview-image img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 20px rgba(139, 115, 85, 0.25);
-}
-
-.preview-image figcaption {
-  margin-top: 12px;
-  font-style: italic;
-  color: var(--warm-accent);
-  font-size: 0.9rem;
-  line-height: 1.4;
-}
-
-/* Steps container */
-.steps-container {
-  margin: 40px 0;
-}
-
-.step-box {
-  background: white;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  margin-bottom: 30px;
-  overflow: hidden;
-  border: 1px solid #eee;
-}
-
-.step-header {
-  background: var(--homework);
-  color: white;
-  padding: 15px 20px;
-  font-size: 1.2rem;
-  font-weight: bold;
-  display: flex;
-  align-items: center;
-}
-
-.step-number {
-  background: white;
-  color: var(--homework);
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
-  margin-right: 15px;
-  font-size: 1.2rem;
-}
-
-.step-content {
-  padding: 25px;
-}
-
-.step-content p {
-  margin-bottom: 15px;
-}
-
-.step-content ul {
-  margin-left: 25px;
-  margin-bottom: 15px;
-}
-
-.step-content li {
-  margin-bottom: 10px;
-}
-
-/* Thinking box */
-.thinking-box {
-  background: var(--homework-light);
-  border-radius: 10px;
-  padding: 25px;
-  margin: 30px 0;
-  border-left: 5px solid var(--homework);
-}
-
-.thinking-box h3 {
-  color: var(--homework);
-  margin-top: 0;
-  font-size: 1.4rem;
-  margin-bottom: 20px;
-}
-
-.thinking-box ul {
-  margin-left: 20px;
-  margin-bottom: 0;
-}
-
-.thinking-box li {
-  margin-bottom: 10px;
-}
-
-/* Examples box */
-.examples-box {
-  background: white;
-  border-radius: 10px;
-  padding: 25px;
-  margin: 30px 0;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  border: 2px solid var(--homework);
-}
-
-.examples-box h3 {
-  color: var(--homework);
-  margin-top: 0;
-  text-align: center;
-  margin-bottom: 20px;
-  border-bottom: 2px dashed var(--homework);
-  padding-bottom: 10px;
-}
-
-/* Ideas grid - updated to warm tones */
-.ideas-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 15px;
-  margin: 20px 0;
-}
-
-.idea-card {
-  background: var(--warm-light);
-  border: 2px solid var(--warm-border);
-  border-radius: 10px;
-  padding: 20px;
-  text-align: center;
-}
-
-.idea-card .icon {
-  font-size: 2rem;
-  margin-bottom: 10px;
-}
-
-.idea-card h4 {
-  color: var(--warm-accent);
-  margin: 0 0 8px 0;
-  font-size: 1.1rem;
-}
-
-.idea-card p {
-  font-size: 0.95rem;
-  margin: 0;
-  color: #666;
-}
-
-/* Process visual - updated to warm tones */
-.process-visual {
-  background: white;
-  border-radius: 10px;
-  padding: 30px;
-  margin: 30px 0;
-  box-shadow: 0 5px 15px rgba(139, 115, 85, 0.15);
-  border: 2px solid var(--warm-border);
-}
-
-.process-visual h3 {
-  color: var(--warm-accent);
-  margin-top: 0;
-  text-align: center;
-  margin-bottom: 25px;
-}
-
-.process-steps {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.process-step {
-  text-align: center;
-  flex: 1;
-  min-width: 120px;
-  max-width: 180px;
-}
-
-.process-icon {
-  width: 80px;
-  height: 80px;
-  background: var(--warm-light);
-  border: 3px solid var(--warm-border);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 10px auto;
-  font-size: 2rem;
-}
-
-.process-step p {
-  font-size: 0.95rem;
-  margin: 0;
-  font-weight: bold;
-  color: var(--warm-accent);
-}
-
-.process-arrow {
-  font-size: 2rem;
-  color: var(--homework);
-  flex-shrink: 0;
-}
-
-@media (max-width: 600px) {
-  .process-steps {
-    flex-direction: column;
-  }
-  
-  .process-arrow {
-    transform: rotate(90deg);
-  }
-}
-
-/* Warning box */
-.warning-box {
-  background: #fff8e6;
-  border: 2px solid #f0a500;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 30px 0;
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-}
-
-.warning-icon {
-  font-size: 2rem;
-  flex-shrink: 0;
-}
-
-.warning-text h4 {
-  color: #d49000;
-  margin-bottom: 5px;
-}
-
-.warning-text p {
-  margin-bottom: 0;
-}
-
-/* Tip box */
-.tip-box {
-  background: linear-gradient(135deg, #e8f5e9 0%, #fff 100%);
-  border: 2px solid #28a745;
-  border-radius: 10px;
-  padding: 20px;
-  margin: 30px 0;
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
-}
-
-.tip-icon {
-  font-size: 2rem;
-  flex-shrink: 0;
-}
-
-.tip-text h4 {
-  color: #28a745;
-  margin-bottom: 5px;
-}
-
-.tip-text p {
-  margin-bottom: 0;
-}
-
-/* Checklist */
-.checklist {
-  background: white;
-  border-radius: 10px;
-  padding: 25px;
-  margin: 30px 0;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  border: 2px solid var(--homework);
-}
-
-.checklist h3 {
-  color: var(--homework);
-  margin-top: 0;
-  text-align: center;
-  margin-bottom: 20px;
-  border-bottom: 2px dashed var(--homework);
-  padding-bottom: 10px;
-}
-
-.checklist-item {
-  margin-bottom: 15px;
-  display: flex;
-  align-items: flex-start;
-}
-
-.checklist-checkbox {
-  width: 24px;
-  height: 24px;
-  border: 2px solid var(--homework);
-  border-radius: 5px;
-  margin-right: 15px;
-  flex-shrink: 0;
-  position: relative;
-  cursor: pointer;
-}
-
-.checklist-checkbox.checked::after {
-  content: "✓";
-  position: absolute;
-  color: var(--homework);
-  font-size: 20px;
-  top: -4px;
-  left: 4px;
-  font-weight: bold;
-}
-
-.checklist-text {
-  flex-grow: 1;
-}
-
-.checklist-label {
-  font-weight: bold;
-  color: var(--homework);
-}
-
-.checklist-desc {
-  font-size: 0.95rem;
-  color: #666;
-  margin-top: 3px;
-}
-
-/* Submission box */
-.submission-box {
-  background: #f8f8f8;
-  border-radius: 10px;
-  padding: 25px;
-  margin: 40px 0 20px 0;
-  border: 3px dashed var(--homework);
-  text-align: center;
-}
+  content: ""; width: 5px; height: 30px; background: var(--pink); flex-shrink: 0;
+}
+h3 { font-family: 'Space Mono', monospace; font-size: 1rem; margin: 18px 0 8px; }
+p { margin-bottom: 12px; }
+
+/* ---------- Progress + nav ---------- */
+.progress-wrap { margin-bottom: 18px; }
+.progress-label {
+  font-family: 'Space Mono', monospace; font-size: 0.78rem;
+  display: flex; justify-content: space-between; margin-bottom: 6px;
+}
+.progress-bar { height: 10px; background: var(--warm-mid); border: 2px solid var(--ink); }
+.progress-fill { height: 100%; width: 0; background: var(--teal); transition: width .35s; }
+
+.nav-block {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 8px; margin-bottom: 10px;
+}
+.nav-btn {
+  font-family: 'Space Mono', monospace; font-size: 0.82rem; font-weight: 700;
+  padding: 12px 10px; background: #fff; color: var(--ink);
+  border: 2px solid var(--ink); cursor: pointer; text-align: left;
+  transition: transform .15s, box-shadow .15s;
+}
+.nav-btn small { display: block; font-weight: 400; color: var(--concrete); font-size: 0.72rem; }
+.nav-btn:hover { transform: translate(-2px,-2px); box-shadow: 4px 4px 0 var(--ink); }
+.nav-btn.active { color: #fff; }
+.nav-btn.active small { color: rgba(255,255,255,.85); }
+.nav-btn[data-c="ink"].active    { background: var(--ink); }
+.nav-btn[data-c="teal"].active   { background: var(--teal); border-color: var(--teal); }
+.nav-btn[data-c="pink"].active   { background: var(--pink); border-color: var(--pink); }
+.nav-btn[data-c="purple"].active { background: var(--purple); border-color: var(--purple); }
+.nav-btn[data-c="blue"].active   { background: var(--blue); border-color: var(--blue); }
+.nav-btn[data-c="gold"].active   { background: var(--gold); border-color: var(--gold); }
+.nav-btn.done::after { content: " ✓"; }
+
+/* ---------- Sections ---------- */
+.section { display: none; animation: fade .3s; }
+.section.active { display: block; }
+@keyframes fade { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+
+.section-banner {
+  color: #fff; padding: 20px 22px; margin-bottom: 18px;
+  font-family: 'Space Mono', monospace;
+}
+.section-banner .num { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; opacity: .85; }
+.section-banner .title { font-family: 'DM Serif Display', serif; font-size: 1.9rem; line-height: 1.2; }
+.bg-ink { background: var(--ink); }
+.bg-teal { background: var(--teal); }
+.bg-pink { background: var(--pink); }
+.bg-purple { background: var(--purple); }
+.bg-blue { background: var(--blue); }
+.bg-gold { background: var(--gold); }
+
+.intro { font-size: 1.05rem; margin-bottom: 18px; }
+
+/* ---------- Cards ---------- */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px; margin: 14px 0 20px; }
+.card {
+  background: #fff; border: 2px solid var(--ink); padding: 16px;
+  cursor: default;
+}
+.card.link { cursor: pointer; transition: transform .15s, box-shadow .15s; }
+.card.link:hover { transform: translate(-2px,-2px); box-shadow: 4px 4px 0 var(--ink); }
+.card .icon { font-size: 1.6rem; }
+.card .label { font-family: 'Space Mono', monospace; font-weight: 700; margin: 4px 0; }
+.card p { font-size: 0.9rem; margin: 0; }
+.card.teal { border-top: 6px solid var(--teal); }
+.card.pink { border-top: 6px solid var(--pink); }
+.card.blue { border-top: 6px solid var(--blue); }
+.card.gold { border-top: 6px solid var(--gold); }
+
+/* ---------- Boxes ---------- */
+.box { padding: 16px 18px; margin: 16px 0; border-left: 5px solid; background: #fff; }
+.box strong { font-family: 'Space Mono', monospace; }
+.box.pink { border-color: var(--pink); background: var(--pink-light); }
+.box.teal { border-color: var(--teal); background: var(--teal-light); }
+.box.blue { border-color: var(--blue); background: var(--blue-light); }
+.box.gold { border-color: var(--gold); background: var(--gold-light); }
+.box ul { margin: 6px 0 0 20px; }
+
+.example {
+  background: var(--ink); color: #fff; padding: 18px; margin: 16px 0;
+}
+.example .label { font-family: 'Space Mono', monospace; font-size: 0.78rem; letter-spacing: 2px; text-transform: uppercase; color: var(--pink); margin-bottom: 10px; }
+.example img { width: 100%; height: auto; display: block; border: 2px solid #fff; cursor: zoom-in; background: #333; min-height: 60px; }
+.example p { margin: 10px 0 0; font-size: 0.9rem; }
+
+.key {
+  font-family: 'Space Mono', monospace; font-size: 0.82rem;
+  background: #fff; border: 2px solid var(--ink); border-bottom-width: 4px;
+  padding: 1px 7px; white-space: nowrap;
+}
+.path {
+  font-family: 'Space Mono', monospace; font-size: 0.88rem;
+  background: var(--paper); border: 1px dashed var(--concrete); padding: 1px 6px;
+}
+
+/* ---------- Accordion steps ---------- */
+.step { background: #fff; border: 2px solid var(--ink); margin-bottom: 10px; }
+.step-head {
+  width: 100%; display: flex; align-items: center; gap: 14px;
+  padding: 14px 16px; background: none; border: 0; cursor: pointer;
+  font-family: 'Space Mono', monospace; font-size: 0.95rem; font-weight: 700;
+  text-align: left; color: var(--ink);
+}
+.step-num {
+  width: 34px; height: 34px; flex-shrink: 0; color: #fff;
+  display: grid; place-items: center; font-size: 0.95rem;
+}
+.step-head .arrow { margin-left: auto; transition: transform .2s; }
+.step.open .arrow { transform: rotate(90deg); }
+.step-body { display: none; padding: 0 18px 16px 66px; }
+.step.open .step-body { display: block; }
+.step-body ol, .step-body ul { margin: 4px 0 10px 20px; }
+.step-body li { margin-bottom: 6px; }
+@media (max-width: 600px) { .step-body { padding-left: 18px; } }
+
+/* ---------- Checklist ---------- */
+.checklist { background: #fff; border: 2px solid var(--ink); padding: 16px 18px; margin: 20px 0; }
+.checklist h3 { margin-top: 0; }
+.checklist label {
+  display: flex; gap: 12px; align-items: flex-start; padding: 8px 0;
+  border-bottom: 1px dashed var(--warm-mid); cursor: pointer;
+}
+.checklist label:last-child { border-bottom: 0; }
+.checklist input { width: 22px; height: 22px; flex-shrink: 0; margin-top: 2px; cursor: pointer; }
+.checklist input:checked + span { text-decoration: line-through; color: var(--concrete); }
+.checklist.teal { border-top: 6px solid var(--teal); } .checklist.teal input { accent-color: var(--teal); }
+.checklist.pink { border-top: 6px solid var(--pink); } .checklist.pink input { accent-color: var(--pink); }
+.checklist.purple { border-top: 6px solid var(--purple); } .checklist.purple input { accent-color: var(--purple); }
+.checklist.blue { border-top: 6px solid var(--blue); } .checklist.blue input { accent-color: var(--blue); }
+.checklist.gold { border-top: 6px solid var(--gold); } .checklist.gold input { accent-color: var(--gold); }
+
+/* ---------- Reflection cards ---------- */
+.reflect { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin: 10px 0; }
+.reflect div { background: var(--blue-light); border: 2px solid var(--blue); padding: 12px; font-size: 0.9rem; }
+.reflect b { font-family: 'Space Mono', monospace; color: var(--blue); display: block; }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block; font-family: 'Space Mono', monospace; font-weight: 700;
+  font-size: 0.88rem; padding: 12px 18px; border: 2px solid var(--ink);
+  background: #fff; color: var(--ink); cursor: pointer; text-decoration: none;
+  transition: transform .15s, box-shadow .15s;
+}
+.btn:hover { transform: translate(-2px,-2px); box-shadow: 4px 4px 0 var(--ink); }
+.btn.blue { background: var(--blue); color: #fff; border-color: var(--blue); }
+.pager { display: flex; justify-content: space-between; gap: 10px; margin-top: 26px; flex-wrap: wrap; }
+.pager .btn.next { background: var(--ink); color: #fff; margin-left: auto; }
+
+/* ---------- Lightbox ---------- */
+.lightbox {
+  position: fixed; inset: 0; background: rgba(0,0,0,.88);
+  display: none; align-items: center; justify-content: center; z-index: 100;
+  padding: 20px; cursor: zoom-out;
+}
+.lightbox.open { display: flex; }
+.lightbox img { max-width: 100%; max-height: 90vh; border: 3px solid #fff; }
+
+footer { margin-top: 40px; font-family: 'Space Mono', monospace; font-size: 0.75rem; color: var(--concrete); text-align: center; }
+/* ---------- Lesson extras ---------- */
+.card img, .thumbs img, .step-body img.zoom {
+  width: 100%; height: auto; display: block; border: 2px solid var(--ink);
+  cursor: zoom-in; background: var(--warm-mid); min-height: 60px; margin: 8px 0;
+}
+.card img { aspect-ratio: 4/3; object-fit: cover; }
+.step-body img.zoom { max-width: 460px; }
+.thumbs { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 10px; margin-top: 12px; }
+.thumbs figure { margin: 0; }
+.thumbs figcaption { font-family: 'Space Mono', monospace; font-size: 0.75rem; color: #ddd; }
+.example img.zoom { max-height: 520px; object-fit: contain; }
+
+.video { border: 2px solid var(--ink); background: var(--ink); margin: 6px 0 18px; }
+.video .frame { position: relative; padding-bottom: 56.25%; }
+.video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+.video .cap { color: #fff; font-family: 'Space Mono', monospace; font-size: 0.85rem; padding: 8px 12px; }
+
+.keys { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 10px 0 20px; }
+.keys div { background: #fff; border: 2px solid var(--ink); padding: 12px; text-align: center; font-size: 0.88rem; }
+.keys .key { display: inline-block; margin-bottom: 6px; }
+
+/* Quiz */
+.q { background: #fff; border: 2px solid var(--ink); border-top: 6px solid var(--purple); padding: 16px 18px; margin-bottom: 14px; }
+.q .qt { font-family: 'Space Mono', monospace; font-weight: 700; margin-bottom: 10px; }
+.opts { display: grid; gap: 8px; }
+.opt {
+  font-family: 'IBM Plex Mono', monospace; font-size: 0.95rem; text-align: left;
+  padding: 10px 14px; background: var(--paper); border: 2px solid var(--warm-mid); cursor: pointer; color: var(--ink);
+}
+.opt:hover { border-color: var(--purple); }
+.opt.right { background: #e3f4e6; border-color: #2e7d32; }
+.opt.wrong { background: #fdecec; border-color: #c62828; }
+.fb { font-family: 'Space Mono', monospace; font-size: 0.85rem; margin-top: 8px; min-height: 1.2em; }
+.score { font-family: 'Space Mono', monospace; font-weight: 700; color: var(--purple); }
+
+.order { display: grid; gap: 8px; margin: 10px 0; }
+.order-item {
+  display: flex; align-items: center; gap: 10px; background: #fff;
+  border: 2px solid var(--ink); padding: 8px 10px;
+}
+.order-item .pos { font-family: 'Space Mono', monospace; font-weight: 700; color: var(--purple); width: 22px; }
+.order-item .txt { flex: 1; font-size: 0.92rem; }
+.order-item button {
+  width: 38px; height: 38px; font-size: 1rem; border: 2px solid var(--ink);
+  background: var(--paper); cursor: pointer;
+}
+.order-item button:disabled { opacity: .3; cursor: default; }
+.order-item.ok { border-color: #2e7d32; background: #e3f4e6; }
+.order-item.no { border-color: #c62828; background: #fdecec; }
+.btn.purple { background: var(--purple); color: #fff; border-color: var(--purple); }
+.btn.gold { background: var(--gold); color: #fff; border-color: var(--gold); }
+.file { font-family: 'Space Mono', monospace; font-size: 0.85rem; background: var(--paper); padding: 1px 6px; border: 1px dashed var(--concrete); word-break: break-all; }
+.checklist.ink { border-top: 6px solid var(--ink); } .checklist.ink input { accent-color: var(--ink); }
+
+/* Stuck? troubleshooting */
+.stuck { background: #fff; border: 2px solid var(--ink); margin: 20px 0; }
+.stuck .stuck-head { background: var(--ink); color: #fff; font-family: 'Space Mono', monospace; font-weight: 700; padding: 10px 16px; }
+.stuck .row { display: grid; grid-template-columns: 1fr 1.4fr; border-top: 1px dashed var(--warm-mid); }
+.stuck .row:first-of-type { border-top: 0; }
+.stuck .prob, .stuck .fix { padding: 10px 16px; font-size: 0.92rem; }
+.stuck .prob { font-weight: 600; background: var(--paper); }
+.stuck .prob::before { content: "✗ "; color: #c62828; }
+.stuck .fix::before { content: "→ "; color: var(--teal); font-weight: 700; }
+@media (max-width: 600px) { .stuck .row { grid-template-columns: 1fr; } }
+
+/* ---------- Due banner ---------- */
+.due {
+  background: var(--ink); color: #fff;
+  font-family: 'Space Mono', monospace; font-weight: 700;
+  padding: 16px 20px; display: flex; gap: 14px; align-items: center;
+  font-size: 1rem;
+}
+.due span { font-size: 1.5rem; }
+
+/* ---------- Save box ---------- */
+.save { background: var(--gold-light); border: 2px solid var(--gold); border-left-width: 8px; padding: 16px 20px; }
+.save .title { font-family: 'Space Mono', monospace; font-weight: 700; color: var(--gold); margin-bottom: 6px; }
+.save ul { margin-left: 20px; }
+
+.checklist .head {
+  display: flex; justify-content: space-between; align-items: center;
+  font-family: 'Space Mono', monospace; font-weight: 700; margin-bottom: 6px;
+}
+.checklist .count { font-size: 0.82rem; color: var(--gold); }
+.checklist label {
+  display: flex; gap: 12px; align-items: flex-start; padding: 8px 0;
+  border-bottom: 1px dashed var(--warm-mid); cursor: pointer;
+}
+.checklist label:last-of-type { border-bottom: 0; }
+.checklist input { width: 22px; height: 22px; flex-shrink: 0; margin-top: 2px; cursor: pointer; accent-color: var(--gold); }
+.checklist input:checked + span { text-decoration: line-through; color: var(--concrete); }
+.ready {
+  display: none; margin-top: 12px; padding: 10px 14px;
+  background: var(--gold); color: #fff; font-family: 'Space Mono', monospace; font-weight: 700;
+}
+.ready.show { display: block; }
+
+
+.checklist .head { display:flex; justify-content:space-between; align-items:center; font-family:'Space Mono',monospace; font-weight:700; margin-bottom:6px; }
+.tutor { background: var(--purple-light); border: 2px dashed var(--purple); padding: 14px 18px; margin: 14px 0; }
+.tutor strong { font-family: 'Space Mono', monospace; color: var(--purple); }
+.compare { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:12px 0; }
+.compare > div { background:#fff; border:2px solid var(--ink); padding:14px 16px; }
+.compare .bad { border-top:6px solid #c62828; } .compare .good { border-top:6px solid #2e7d32; }
+.compare h3 { margin-top:0; }
+.compare ul { margin-left:18px; }
+@media (max-width:600px){ .compare{grid-template-columns:1fr;} }
+code.prompt { font-family:'Space Mono',monospace; background:var(--ink); color:#fff; padding:2px 8px; font-size:0.85rem; display:inline-block; margin-top:4px; }
+.game-item { background:#fff; border:2px solid var(--ink); margin-bottom:10px; }
+.game-item .gi-head { display:flex; gap:12px; align-items:flex-start; padding:12px 14px; }
+.game-item .gi-text { flex:1; font-size:0.95rem; }
+.game-item .gi-btns { display:flex; gap:6px; flex-shrink:0; }
+.game-item .gi-btns button { font-family:'Space Mono',monospace; font-size:0.78rem; font-weight:700; padding:6px 10px; border:2px solid var(--ink); background:var(--paper); cursor:pointer; }
+.game-item.done { border-color:#2e7d32; background:#eef8f0; }
+.game-item.done .gi-done { background:#2e7d32; color:#fff; border-color:#2e7d32; }
+.game-item .gi-body { display:none; padding:0 14px 14px; border-top:1px dashed var(--warm-mid); }
+.game-item.open .gi-body { display:block; }
+.game-item .gi-body img { max-width:520px; }
+.subtabs { display:flex; gap:8px; margin:10px 0 14px; flex-wrap:wrap; }
+.subtabs button { font-family:'Space Mono',monospace; font-weight:700; font-size:0.85rem; padding:10px 14px; border:2px solid var(--ink); background:#fff; cursor:pointer; }
+.subtabs button.on { background:var(--teal); color:#fff; border-color:var(--teal); }
+.celebrate { display:none; background:var(--gold); color:#fff; font-family:'Space Mono',monospace; font-weight:700; padding:10px 14px; margin-top:8px; }
+.celebrate.show { display:block; }
+.ref-links { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:10px; }
+.ref-links a { display:block; background:#fff; border:2px solid var(--ink); padding:12px; color:var(--ink); text-decoration:none; font-size:0.88rem; }
+.ref-links a:hover { box-shadow:4px 4px 0 var(--ink); transform:translate(-2px,-2px); }
+.ref-links b { font-family:'Space Mono',monospace; display:block; color:var(--teal); }
+.ref-links small { color:var(--concrete); font-family:'Space Mono',monospace; font-size:0.72rem; }
+.print-btn { position:fixed; right:16px; bottom:16px; width:46px; height:46px; border:2px solid var(--ink); background:#fff; font-size:1.2rem; cursor:pointer; }
+@media print { .print-btn, nav, .pager, .progress-wrap { display:none !important; } .section { display:block !important; } }
 
-.submission-box h3 {
-  color: var(--homework);
-  margin-top: 0;
-  font-size: 1.6rem;
-  margin-bottom: 15px;
-}
-
-.submission-date {
-  font-size: 1.3rem;
-  font-weight: bold;
-  margin: 15px 0;
-  color: var(--homework);
-}
-
-/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.85);
-  overflow: auto;
-}
-
-.modal-content {
-  margin: auto;
-  display: block;
-  max-width: 90%;
-  max-height: 90%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  border: 3px solid white;
-  border-radius: 5px;
-}
-
-.close {
-  position: absolute;
-  top: 15px;
-  right: 35px;
-  color: #f1f1f1;
-  font-size: 40px;
-  font-weight: bold;
-  transition: 0.3s;
-  z-index: 1001;
-}
-
-.close:hover,
-.close:focus {
-  color: #bbb;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-/* Print button */
-.print-button {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: var(--homework);
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  font-size: 24px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.print-button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-}
-
-@media print {
-  .print-button {
-    display: none;
-  }
-  
-  body {
-    background: white;
-  }
-  
-  .container {
-    box-shadow: none;
-    border: none;
-    padding: 0;
-    max-width: 100%;
-  }
-}
 </style>
 </head>
 <body>
+<div class="wrap">
+  <header>
+    <div>
+      <div class="eyebrow">Homework · Prepare for Week 8</div>
+      <h1>Selecting Your<br><em>Graphic Element</em></h1>
+    </div>
+    <div class="meta"><strong>4 steps ↓</strong>then bring to class</div>
+  </header>
+  <div class="due"><span>⏰</span>Due before Week 8</div>
 
-<div class="container">
-  <h1>Selecting Your Graphic Element</h1>
-  
-  <div class="banner">
-    <h2>HOMEWORK: PREPARE FOR WEEK 8</h2>
-    <p>Choose a small detail from your existing pages to transform into a graphic element</p>
-  </div>
+  <p class="intro" style="margin-top:18px">Choose a <strong>small detail</strong> from your pages.<br>In Week 8 you turn it into a <strong>graphic element</strong> you can reuse.</p>
 
-  <div class="preview-box">
-    <h3>🎨 What We'll Learn in Week 8</h3>
-    <p>Transform a <strong>small detail</strong> from your design pages into a <strong>reusable graphic element</strong></p>
-    
-    <div class="preview-gallery">
-      <figure class="preview-image">
-        <img src="graphic-element-preview-1.jpg" alt="Example of a detail becoming a graphic element" onclick="openModal(this.src)">
-        <figcaption>A small detail from your page can become a powerful design element</figcaption>
-      </figure>
-      
-      <figure class="preview-image">
-        <img src="graphic-element-preview-2.jpg" alt="Example of a graphic element used within a research page" onclick="openModal(this.src)">
-        <figcaption>Graphic elements can be reused across your design pages</figcaption>
-      </figure>
-    </div>
-  </div>
+  <div class="rule"></div>
 
-  <div class="process-visual">
-    <h3>The Process</h3>
-    <div class="process-steps">
-      <div class="process-step">
-        <div class="process-icon">📄</div>
-        <p>Your Design Page</p>
-      </div>
-      <div class="process-arrow">→</div>
-      <div class="process-step">
-        <div class="process-icon">🔍</div>
-        <p>Select a Detail</p>
-      </div>
-      <div class="process-arrow">→</div>
-      <div class="process-step">
-        <div class="process-icon">✨</div>
-        <p>Graphic Element</p>
+    <h2>Examples</h2>
+    <div class="example">
+      <div class="label">Click to enlarge</div>
+      <div class="thumbs">
+        <figure><img src="graphic-element-preview-1.jpg" alt="A small detail from your page can become a powerful design element" class="zoom"><figcaption>A small detail from your page can become a powerful design element</figcaption></figure>
+        <figure><img src="graphic-element-preview-2.jpg" alt="Graphic elements can be reused across your design pages" class="zoom"><figcaption>Graphic elements can be reused across your design pages</figcaption></figure>
       </div>
     </div>
-  </div>
+    <div class="cards">
+      <div class="card teal"><div class="icon">📄</div><div class="label">Your design page</div></div>
+      <div class="card pink"><div class="icon">🔍</div><div class="label">→ Select a detail</div></div>
+      <div class="card purple"><div class="icon">✨</div><div class="label">→ Graphic element</div></div>
+    </div>
 
-  <div class="steps-container">
-    <h2>What You Need To Do</h2>
-    
-    <div class="step-box">
-      <div class="step-header">
-        <div class="step-number">1</div>
-        <div>Look Through Your Existing Pages</div>
-      </div>
-      <div class="step-content">
-        <p>Go back through <strong>all your design sheets</strong> from this project. Look carefully at every page.</p>
-        <p>You are looking for a <strong>small detail</strong> that could work as a graphic element — something that represents your research theme.</p>
-      </div>
+  <div class="rule"></div>
+
+    <h2>What to do</h2>
+    <div class="cards">
+      <div class="card teal"><div class="icon">1️⃣</div><div class="label">Look through your pages</div><p>Look at <strong>all</strong> your design sheets. Find a <strong>small detail</strong> that shows your research theme.</p></div>
+      <div class="card teal"><div class="icon">2️⃣</div><div class="label">Choose one detail</div><p><ul><li>Part of a drawing</li><li>A section of a collage</li><li>A texture or pattern</li><li>A small motif or shape</li><li>Anything meaningful to your project</li></ul></p></div>
+      <div class="card pink"><div class="icon">3️⃣</div><div class="label">Scan or photograph the page</div><p><ul><li>Scan as <strong>JPEG or PNG</strong></li><li>Or a <strong>clear photo</strong> in good light</li><li>Your detail must be <strong>clear</strong></li><li>Save to phone, USB or cloud</li></ul><p style="margin-top:6px"><strong>Phone apps:</strong> Adobe Scan, Microsoft Lens, iPhone Notes</p></p></div>
+      <div class="card pink"><div class="icon">4️⃣</div><div class="label">Be ready to explain</div><p><ul><li><strong>Which</strong> detail you chose</li><li><strong>Why</strong> it matters to your project</li><li><strong>How</strong> it connects to your research</li></ul></p></div>
     </div>
-    
-    <div class="step-box">
-      <div class="step-header">
-        <div class="step-number">2</div>
-        <div>Choose One Specific Element</div>
-      </div>
-      <div class="step-content">
-        <p>Select <strong>one small detail</strong> from your pages. This could be:</p>
-        <ul>
-          <li>Part of a drawing you made</li>
-          <li>A section of a collage</li>
-          <li>A texture or pattern</li>
-          <li>A small motif or shape</li>
-          <li>Any visual element that is meaningful to your project</li>
-        </ul>
-        <p><strong>Think carefully!</strong> This element will play a role in your developing design process.</p>
-      </div>
+
+  <div class="rule"></div>
+
+    <h2>Questions to help you choose</h2>
+  <ul><li>What small detail keeps appearing in my work?</li><li>Which element best shows my research theme?</li><li>What shape, texture or motif feels important?</li><li>Could this detail work when repeated or changed?</li><li>Which element do I feel most connected to?</li></ul>
+    <h2>What kind of detail?</h2>
+    <div class="cards">
+      <div class="card teal"><div class="icon">✏️</div><div class="label">Part of a drawing</div><p>A shape, line or motif from your sketches</p></div>
+      <div class="card teal"><div class="icon">📰</div><div class="label">Collage section</div><p>An interesting area from a collage</p></div>
+      <div class="card teal"><div class="icon">🔲</div><div class="label">Texture or pattern</div><p>A surface or repeat pattern you made</p></div>
+      <div class="card pink"><div class="icon">🎯</div><div class="label">Symbol or motif</div><p>A meaningful shape from your research</p></div>
+      <div class="card pink"><div class="icon">🖌️</div><div class="label">Mark making</div><p>Interesting marks or brushstrokes</p></div>
+      <div class="card pink"><div class="icon">🧩</div><div class="label">Any visual element</div><p>Anything important to your project</p></div>
     </div>
-    
-    <div class="step-box">
-      <div class="step-header">
-        <div class="step-number">3</div>
-        <div>Scan or Photograph the Page</div>
-      </div>
-      <div class="step-content">
-        <p>Bring a <strong>digital copy</strong> of the page that contains your chosen element:</p>
-        <ul>
-          <li>Scan as <strong>JPEG or PNG</strong></li>
-          <li>Or take a <strong>clear photo</strong> with good lighting</li>
-          <li>Make sure your chosen detail is <strong>clear and visible</strong></li>
-          <li>Save to your phone, USB, or cloud storage</li>
-        </ul>
-        <p><strong>Phone scanning apps:</strong> Adobe Scan, Microsoft Lens, or iPhone Notes app</p>
-      </div>
+    <div class="box teal">
+      <strong>💡 Tip: think small</strong>
+      <p style="margin:6px 0 0">You don't need the whole page. Look for a <strong>small, specific detail</strong>. The best ones are often hidden in the corners!</p>
     </div>
-    
-    <div class="step-box">
-      <div class="step-header">
-        <div class="step-number">4</div>
-        <div>Be Ready to Explain Your Choice</div>
-      </div>
-      <div class="step-content">
-        <p>In class, you should be able to explain:</p>
-        <ul>
-          <li><strong>Which detail</strong> you have chosen</li>
-          <li><strong>Why</strong> this element is significant to your project</li>
-          <li><strong>How</strong> it connects to your research theme</li>
-        </ul>
-      </div>
+    <div class="box pink">
+      <strong>⚠️ Important</strong>
+      <p style="margin:6px 0 0">Choose something from <strong>your own work</strong> – not an image from the internet or a printed picture.</p>
     </div>
+
+  <div class="rule"></div>
+
+    <h2>Ready for Week 8?</h2>
+  <div class="checklist gold" id="checklist">
+    <div class="head"><span>Homework checklist</span><span class="count">0 / 5</span></div>
+    <label><input type="checkbox"><span>Looked through all my design pages</span></label>
+    <label><input type="checkbox"><span>Chose one specific detail that connects to my theme</span></label>
+    <label><input type="checkbox"><span>Scanned or photographed the page – detail is clear</span></label>
+    <label><input type="checkbox"><span>Digital file on USB, phone or cloud storage</span></label>
+    <label><input type="checkbox"><span>I know why I chose this element</span></label>
+    <div class="ready">✓ Ready! Bring your scanned page with your chosen detail. See you in Week 8! 🎨</div>
   </div>
 
-  <div class="thinking-box">
-    <h3>💭 Questions to Help You Choose</h3>
-    <p>Ask yourself these questions as you look through your pages:</p>
-    <ul>
-      <li>What small detail keeps appearing in my work?</li>
-      <li>Which element best represents my research theme?</li>
-      <li>What shape, texture, or motif feels important to my project?</li>
-      <li>Is there a detail that could work well when repeated or transformed?</li>
-      <li>Which element do I feel most connected to?</li>
-    </ul>
-  </div>
-
-  <div class="examples-box">
-    <h3>What Kind of Details Could You Choose?</h3>
-    <div class="ideas-grid">
-      <div class="idea-card">
-        <div class="icon">✏️</div>
-        <h4>Part of a Drawing</h4>
-        <p>A shape, line, or motif from your sketches</p>
-      </div>
-      <div class="idea-card">
-        <div class="icon">📰</div>
-        <h4>Collage Section</h4>
-        <p>An interesting area from a collage you made</p>
-      </div>
-      <div class="idea-card">
-        <div class="icon">🔲</div>
-        <h4>Texture or Pattern</h4>
-        <p>A surface or repeat pattern you created</p>
-      </div>
-      <div class="idea-card">
-        <div class="icon">🎯</div>
-        <h4>Symbol or Motif</h4>
-        <p>A meaningful shape from your research</p>
-      </div>
-      <div class="idea-card">
-        <div class="icon">🖌️</div>
-        <h4>Mark Making</h4>
-        <p>Interesting marks or brushstrokes</p>
-      </div>
-      <div class="idea-card">
-        <div class="icon">🧩</div>
-        <h4>Any Visual Element</h4>
-        <p>Anything significant to your project</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="tip-box">
-    <div class="tip-icon">💡</div>
-    <div class="tip-text">
-      <h4>Tip: Think Small</h4>
-      <p>You don't need to choose the whole page — look for a <strong>small, specific detail</strong> that catches your eye. Sometimes the most interesting elements are hidden in the corners!</p>
-    </div>
-  </div>
-
-  <div class="warning-box">
-    <div class="warning-icon">⚠️</div>
-    <div class="warning-text">
-      <h4>Important</h4>
-      <p>Choose something from <strong>your own work</strong> — not an image from the internet or a printed picture. The element must come from your design pages.</p>
-    </div>
-  </div>
-
-  <div class="checklist">
-    <h3>Homework Checklist</h3>
-    
-    <div class="checklist-item">
-      <div class="checklist-checkbox" onclick="toggleChecked(this)"></div>
-      <div class="checklist-text">
-        <div class="checklist-label">Look through all your design pages</div>
-        <div class="checklist-desc">Review every page from your project</div>
-      </div>
-    </div>
-    
-    <div class="checklist-item">
-      <div class="checklist-checkbox" onclick="toggleChecked(this)"></div>
-      <div class="checklist-text">
-        <div class="checklist-label">Choose one specific detail</div>
-        <div class="checklist-desc">A small element that connects to your research theme</div>
-      </div>
-    </div>
-    
-    <div class="checklist-item">
-      <div class="checklist-checkbox" onclick="toggleChecked(this)"></div>
-      <div class="checklist-text">
-        <div class="checklist-label">Scan or photograph the page</div>
-        <div class="checklist-desc">Make sure your chosen detail is clear and visible</div>
-      </div>
-    </div>
-    
-    <div class="checklist-item">
-      <div class="checklist-checkbox" onclick="toggleChecked(this)"></div>
-      <div class="checklist-text">
-        <div class="checklist-label">Bring your digital file to class</div>
-        <div class="checklist-desc">On USB, phone, or uploaded to cloud storage</div>
-      </div>
-    </div>
-    
-    <div class="checklist-item">
-      <div class="checklist-checkbox" onclick="toggleChecked(this)"></div>
-      <div class="checklist-text">
-        <div class="checklist-label">Know why you chose this element</div>
-        <div class="checklist-desc">Be ready to explain your choice in class</div>
-      </div>
-    </div>
-  </div>
-  
-  <div class="submission-box">
-    <h3>Ready for Week 8?</h3>
-    <p>Bring your <strong>scanned page</strong> with your <strong>chosen detail</strong></p>
-    <p>We'll transform it into a graphic element in Photoshop!</p>
-    <div class="submission-date">See you in Week 8! 🎨</div>
-  </div>
-  
-  <div id="imageModal" class="modal">
-    <span class="close">&times;</span>
-    <img class="modal-content" id="modalImage">
-  </div>
+  <footer>UAL · Digital Skills · Selecting Your Graphic Element · Homework</footer>
 </div>
 
-<button class="print-button" onclick="window.print()">🖨️</button>
+<div class="lightbox" id="lightbox"><img alt=""></div>
+<button class="print-btn" onclick="window.print()" title="Print">🖨️</button>
 
 <script>
-function openModal(src) {
-  const modal = document.getElementById('imageModal');
-  const modalImg = document.getElementById('modalImage');
-  modal.style.display = "block";
-  modalImg.src = src;
+// ---------- Navigation ----------
+function goTo(id) {
+  document.querySelectorAll(".section").forEach(s => s.classList.toggle("active", s.id == id));
+  document.querySelectorAll(".nav-btn").forEach(b => b.classList.toggle("active", b.dataset.target == id));
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
+document.querySelectorAll(".nav-btn").forEach(b => b.addEventListener("click", () => goTo(b.dataset.target)));
+document.querySelectorAll("[data-goto]").forEach(b => b.addEventListener("click", () => goTo(b.dataset.goto)));
 
-document.getElementsByClassName('close')[0].onclick = function() {
-  document.getElementById('imageModal').style.display = "none";
+// ---------- Accordion ----------
+document.querySelectorAll(".step-head").forEach(h => h.addEventListener("click", () => h.parentElement.classList.toggle("open")));
+
+// ---------- Checklists (saved in this browser) + progress ----------
+const PAGE = "select-hw";
+function updateProgress() {
+  const boxes = document.querySelectorAll(".checklist:not(.nocount) input");
+  let ticked = 0;
+  boxes.forEach(b => { if (b.checked) ticked++; });
+  const pct = boxes.length ? Math.round((ticked / boxes.length) * 100) : 0;
+  const fill = document.getElementById("progFill");
+  if (fill) { fill.style.width = pct + "%"; document.getElementById("progText").textContent = pct + "%"; }
+  document.querySelectorAll(".nav-btn").forEach(btn => {
+    const sec = document.getElementById(btn.dataset.target);
+    const items = sec ? sec.querySelectorAll(".checklist:not(.nocount) input") : [];
+    let done = items.length > 0;
+    items.forEach(b => { if (!b.checked) done = false; });
+    btn.classList.toggle("done", done);
+  });
+  document.querySelectorAll(".checklist").forEach(list => {
+    const all = list.querySelectorAll("input");
+    let n = 0;
+    all.forEach(b => { if (b.checked) n++; });
+    const count = list.querySelector(".count");
+    if (count) count.textContent = n + " / " + all.length;
+    const ready = list.querySelector(".ready");
+    if (ready) ready.classList.toggle("show", n == all.length);
+  });
 }
-
-window.onclick = function(event) {
-  const modal = document.getElementById('imageModal');
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
-
-function toggleChecked(element) {
-  element.classList.toggle('checked');
-  const checkboxes = document.querySelectorAll('.checklist-checkbox');
-  const states = Array.from(checkboxes).map(checkbox => checkbox.classList.contains('checked'));
-  localStorage.setItem('graphic-element-homework-checklist', JSON.stringify(states));
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-  const savedStates = localStorage.getItem('graphic-element-homework-checklist');
-  if (savedStates) {
-    const states = JSON.parse(savedStates);
-    const checkboxes = document.querySelectorAll('.checklist-checkbox');
-    checkboxes.forEach((checkbox, index) => {
-      if (index < states.length && states[index]) {
-        checkbox.classList.add('checked');
-      }
-    });
-  }
+document.querySelectorAll(".checklist").forEach(list => {
+  const k = PAGE + "-" + list.id;
+  const boxes = list.querySelectorAll("input");
+  try {
+    const saved = JSON.parse(localStorage.getItem(k) || "[]");
+    boxes.forEach((b, i) => { if (saved[i]) b.checked = true; });
+  } catch (e) {}
+  boxes.forEach(b => b.addEventListener("change", () => {
+    try { localStorage.setItem(k, JSON.stringify(Array.from(boxes).map(x => x.checked))); } catch (e) {}
+    updateProgress();
+  }));
 });
+updateProgress();
+
+// ---------- Lightbox ----------
+const lb = document.getElementById("lightbox");
+document.querySelectorAll("img.zoom").forEach(im => im.addEventListener("click", () => {
+  lb.querySelector("img").src = im.src;
+  lb.classList.add("open");
+}));
+lb.addEventListener("click", () => lb.classList.remove("open"));
 </script>
 
 </body>
